@@ -16,6 +16,8 @@ potraviny = {
 kosik = {}
 # kosik = dict()
 
+budget = 150
+budget_updated = budget * 1
 
 # TODO Pozdrav a vypsani nabidky
 print(
@@ -35,7 +37,7 @@ print(
     sep='\n')
 
 # TODO cely cyklus
-while (zbozi := input('Zadej nazev zbozi: ')) != 'konec':
+while budget_updated > 0 and (zbozi := input('Zadej nazev zbozi: ')) != 'konec':
     # TODO pokud zbozi nebude v nabidce
     if zbozi not in potraviny:
         print(f'Produkt |{zbozi}| bohuzel neni v nabidce :-(')
@@ -44,13 +46,17 @@ while (zbozi := input('Zadej nazev zbozi: ')) != 'konec':
     elif zbozi not in kosik and potraviny[zbozi][1] > 0:
         kosik[zbozi] = [potraviny[zbozi][0], 1]
         potraviny[zbozi][1] -= 1
+        budget_updated -= kosik[zbozi][0]
         # print(kosik) # kontrolni print
+        print(budget_updated)
 
     # TODO pokud zbozi je v kosiku
     elif zbozi in kosik and potraviny[zbozi][1] > 0:
         kosik[zbozi][1] += 1
         potraviny[zbozi][1] -= 1
+        budget_updated -= kosik[zbozi][0]
         # print(kosik) # kontrolni print
+        print(budget_updated)
 
     # TODO pokud zbozi jiz neni skladem
     elif potraviny[zbozi][1] == 0:
@@ -71,3 +77,6 @@ else:
 
     print(oddelovac)
     print(f'Celkova cena za nakup: {celkem},-Kc'.rjust(len(oddelovac)))
+    if celkem > budget:
+        sekera = celkem - budget
+        print(f'Mate u nas sekeru {sekera},-Kc'.rjust(len(oddelovac)))
