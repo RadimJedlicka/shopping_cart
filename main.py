@@ -16,7 +16,7 @@ potraviny = {
 kosik = {}
 # kosik = dict()
 
-budget = 150
+budget = int(input('Zadej vysi sveho kreditu v korunach: '))
 budget_updated = budget * 1
 
 # TODO Pozdrav a vypsani nabidky
