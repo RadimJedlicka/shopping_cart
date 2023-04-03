@@ -1,6 +1,6 @@
 # Doplnujici ulohy pro online kurz
 
-**Ukol c. 1.**: Vypiste uvodni pozdrav a nabidku potravin (pomoci `for` cyklu)tak,aby vypadala zhruba takto:
+**Ukol c. 1.**: Vypiste uvodni pozdrav a nabidku potravin (pomoci `for` cyklu) tak,aby vypadala zhruba takto:
 
 ```python
 Vitejte v nasem online nakupnim centru 
