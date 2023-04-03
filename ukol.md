@@ -38,5 +38,5 @@ Vitejte v nasem online nakupnim centru
 
 Sve reseni mi klidne posilejte, rad se na to podivam :-)
 
-Kodovani zdar
+Kodovani zdar 
 Radim
